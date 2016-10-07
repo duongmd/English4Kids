@@ -1,26 +1,120 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="iXa-u6-EVr">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--English 4 Kids-->
+        <scene sceneID="aGn-8t-Zq3">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                <tableViewController id="vVP-hb-czC" customClass="MasterTableVC" customModule="English4Kids" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="104" sectionHeaderHeight="28" sectionFooterHeight="28" id="GUd-t9-Gu2">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="Cell" rowHeight="104" id="cWB-Lp-Amn">
+                                <rect key="frame" x="0.0" y="92" width="375" height="104"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cWB-Lp-Amn" id="qgZ-ks-NMI">
+                                    <frame key="frameInset" width="342" height="104"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="4RI-l6-H0g" kind="show" identifier="ShowDetail" id="kEZ-4X-i0Q"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <sections/>
+                        <connections>
+                            <outlet property="dataSource" destination="vVP-hb-czC" id="WXZ-lS-cJF"/>
+                            <outlet property="delegate" destination="vVP-hb-czC" id="ZIC-OK-f0u"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="English 4 Kids" id="Erd-H0-lB8"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MGF-MM-YUS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="836" y="302"/>
+        </scene>
+        <!--DetailVC-->
+        <scene sceneID="ssD-iM-T1f">
+            <objects>
+                <viewController id="4RI-l6-H0g" customClass="DetailVC" customModule="English4Kids" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="iah-Nm-ehs"/>
+                        <viewControllerLayoutGuide type="bottom" id="caY-L6-Dwz"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="NEx-pB-Zpn">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="By1-JI-PWb">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="By1-JI-PWb" firstAttribute="leading" secondItem="NEx-pB-Zpn" secondAttribute="leading" id="3BP-bx-h4N"/>
+                            <constraint firstItem="caY-L6-Dwz" firstAttribute="top" secondItem="By1-JI-PWb" secondAttribute="bottom" id="AYR-bq-rIK"/>
+                            <constraint firstAttribute="trailing" secondItem="By1-JI-PWb" secondAttribute="trailing" id="L6G-Ve-dOm"/>
+                            <constraint firstItem="By1-JI-PWb" firstAttribute="top" secondItem="NEx-pB-Zpn" secondAttribute="top" id="QdJ-E9-fy8"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="By1-JI-PWb" id="Lqp-Tw-iGX"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dby-WJ-TVo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1614" y="125"/>
+        </scene>
+        <!--View Pic Controller-->
+        <scene sceneID="yQh-G0-ot9">
+            <objects>
+                <viewController storyboardIdentifier="viewPic" id="2op-k3-fLl" customClass="ViewPicController" customModule="English4Kids" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="wCa-Ft-5mE"/>
+                        <viewControllerLayoutGuide type="bottom" id="QCQ-xM-Iar"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="g21-PW-3qD">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xs8-G1-nou">
+                                <frame key="frameInset" minX="107" minY="254" width="161" height="158"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="imgView" destination="xs8-G1-nou" id="rx7-yb-P3W"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zsC-CV-Ysb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2444" y="138.98050974512745"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="EKD-Gp-ptw">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="iXa-u6-EVr" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="H88-52-h2M">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="vVP-hb-czC" kind="relationship" relationship="rootViewController" id="GXE-sF-HKf"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GzA-71-0fF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="124" y="295"/>
         </scene>
     </scenes>
 </document>
