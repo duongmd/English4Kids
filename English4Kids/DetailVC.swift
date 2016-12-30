@@ -42,7 +42,7 @@ class DetailVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         arrayKeys = dictData.allKeys as NSArray!
         
         //Sap xep Text label theo ABC
-        arrayKeys = arrayKeys.sortedArray(using: "compare:") as NSArray
+        arrayKeys = arrayKeys.sortedArray(using: #selector(NSNumber.compare(_:))) as NSArray
       
         
     }
@@ -74,6 +74,7 @@ class DetailVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         navigationController?.pushViewController(view!, animated: true)
         
         view?.pic = UIImage(named: "\(dictData[arrayKeys[indexPath.row]]!)")
+        
     }
     
     /*

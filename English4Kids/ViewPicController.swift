@@ -10,6 +10,7 @@ import UIKit
 
 class ViewPicController: UIViewController {
 
+    
     @IBOutlet weak var imgView: UIImageView!
     var pic: UIImage?
     
